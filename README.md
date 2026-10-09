@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+SyncGuard
 
-## Getting Started
+Offline-First Record Synchronization and Conflict Resolution
 
-First, run the development server:
+SyncGuard is a web application designed to manage records offline and synchronize changes with a server. It focuses on data consistency, conflict resolution, integrity verification, and secure user access.
 
-```bash
+Features
+Offline-First Storage: Store and manage records locally using IndexedDB.
+Data Synchronization: Queue pending operations and synchronize changes with a server.
+Conflict Resolution: Identify and manage synchronization conflicts.
+Version History: Review record history and support version recovery.
+Authentication: User registration, login, and session management.
+Access Control: Restrict record and conflict access by user.
+Integrity Verification: Perform record integrity checks.
+Real-Time Communication: WebSocket server support.
+Tech Stack
+Next.js
+React
+TypeScript
+Tailwind CSS
+IndexedDB
+PostgreSQL
+Node.js
+WebSockets
+Getting Started
+Prerequisites
+
+Install Node.js and npm. Configure PostgreSQL if required by your environment.
+
+1. Clone the repository
+git clone https://github.com/mahathikanneboina-rgb/SyncGuard.git
+cd SyncGuard
+2. Install dependencies
+npm install
+3. Configure environment variables
+
+Create .env.local using .env.example as a reference. Set the required values for your environment.
+
+Never commit real passwords, database credentials, session secrets, or private keys.
+
+4. Start the application
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+5. Start the WebSocket server
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open another terminal in the project directory and run:
 
-## Learn More
+npm run ws
 
-To learn more about Next.js, take a look at the following resources:
+Configure the required WebSocket settings before use.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Available Commands
+Command	Description
+npm run dev	Start the development server
+npm run ws	Start the WebSocket server
+npm run lint	Run ESLint
+npm run build	Build the application
+npm run start	Start the production server
+Security
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+SyncGuard includes authentication and access-control mechanisms designed to protect user data.
 
-## Deploy on Vercel
+Before production deployment, verify authentication, session handling, user isolation, input validation, synchronization behavior, and dependency security.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Project Status
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+SyncGuard is under development. Verify build, lint, and security test results against the latest code before production use.
+
+Author
+
+Mahathi Kanneboina
+
+GitHub: mahathikanneboina-rgb
+
+License
+
+No license has been specified yet.
